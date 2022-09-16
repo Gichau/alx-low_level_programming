@@ -1,19 +1,17 @@
 #include <stdio.h>
-
 /**
- * main - finds and prints prime factors
+ * main - main function
  *
- * return: return largest prime factor
+ * Return: returns 0
  */
 int main(void)
 {
+	unsigned int a = 2;
+	unsigned long n = 612852475143;
 
-	unsigned long int x  = 612852475143;
-	unsigned int a;
-
-	while (a != x)
+	while (a != n)
 	{
-		if (x % a == 0)
+		if (n % a == 0)
 		{
 			n = n / a;
 		}
@@ -21,10 +19,8 @@ int main(void)
 		{
 			a++;
 		}
+
 	}
 	printf("%lu\n", n);
 	return (0);
 }
-
-
-
