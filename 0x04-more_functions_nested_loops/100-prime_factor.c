@@ -1,24 +1,28 @@
 #include <stdio.h>
+
 /**
  * main - finds and prints prime factors
  *
- * return: always 0
+ * return: return largest prime factor
  */
-int main()
+int main(void)
 {
 
-	long int x  = 612852475143;
-	int count ;
+	unsigned long int x  = 612852475143;
+	unsigned int a;
 
-	for (count = 2 ; x > 1 ; count++)
+	while (a != x)
 	{
-		while(x % count == 0)
+		if (x % a == 0)
 		{
-			printf("%d", count);
-			x = x / count;
+			n = n / a;
+		}
+		else
+		{
+			a++;
 		}
 	}
-	printf("\n");
+	printf("%lu\n", n);
 	return (0);
 }
 
