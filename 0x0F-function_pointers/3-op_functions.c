@@ -1,29 +1,74 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "3-calc.h"
 
 /**
- * get_op_func - selects the correct function to perform the operation.
- * @s: the operator passed as argument to the program
+ * op_add - adds a and b
+ * @a: operand 1
+ * @b: operand 2
  *
- * Return: pointer to the correct function or null if invalid operator.
+ * Return: result of the operation
  */
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-	int i;
+	return (a + b);
+}
 
-	i = 0;
-	while (ops[i].op && strcmp(ops[i].op, s) != 0)
-		i++;
+/**
+ * op_sub - subtracts b from a
+ * @a: operand 1
+ * @b: operand 2
+ *
+ * Return: result of the operation
+ */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
 
-	return (ops[i].f);
+/**
+ * op_mul - multiplies a and b
+ * @a: operand 1
+ * @b: operand 2
+ *
+ * Return: result of the operation
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+
+/**
+ * op_div - divides a by b
+ * @a: operand 1
+ * @b: operand 2
+ *
+ * Return: result of the operation
+ */
+int op_div(int a, int b)
+{
+	if (b == 0)
+	{
+		puts("Error");
+		exit(100);
+
+	}
+	return (a / b);
+}
+
+/**
+ * op_mod - modulo a by b
+ * @a: operand 1
+ * @b: operand 2
+ *
+ * Return: result of the operation
+ */
+int op_mod(int a, int b)
+{
+	if (b == 0)
+	{
+		puts("Error");
+		exit(100);
+	}
+	return (a % b);
 }
